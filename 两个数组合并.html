@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>请把俩个数组 [A1, A2, B1, B2, C1, C2, D1, D2] 和 [A, B, C, D]，合并为 [A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]。</h1>
+    解题思路：遍历数组，当每个元素第一个字母等于arr2里面的就添加，不等就把arr2里面元素添加，此时arr[i]元素未添加，将之添加后，最后面的未添加，添加进去
+    <script>
+        var arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
+        var arr2 = ['A','B','C','D'];
+        var arr3 = [];
+        function a(){
+            var arr = [];
+            var h = 0;
+            var tem = arr2[h];
+            for(var i = 0;i < arr1.length;i++){
+                if(tem === arr1[i].charAt(0)){
+                    arr.push(arr1[i])
+                }else{
+                    arr.push(tem);
+                    h++;
+                    i--;
+                    tem = arr2[h];
+                }
+                if(i===arr1.length-1){
+                arr.push(tem)
+            }
+            }
+            return arr;
+        }
+
+        console.log(a())
+
+    </script>
+</body>
+</html>
