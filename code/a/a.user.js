@@ -1,1 +1,0 @@
-javascript:$(function(){$("#kw").val("selenium");$("#su").click();})
